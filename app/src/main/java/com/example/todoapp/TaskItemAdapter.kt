@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 /**
  * A bridge that tells the recyclerview how to display data we give it
  */
-class TaskItemAdapter(val listOfItems: List<String>,
+class TaskItemAdapter(val listOfItems: MutableList<String>, val listOfDates: MutableList<String>,
                       val longClickListener : OnLongClickListener):
     RecyclerView.Adapter<TaskItemAdapter.ViewHolder>() {
 
@@ -17,12 +17,15 @@ class TaskItemAdapter(val listOfItems: List<String>,
         fun onItemLongClicked(position: Int)
     }
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View) :
+        RecyclerView.ViewHolder(itemView) {
         // store references in our layout view
         val textView: TextView
+        val textView2: TextView
 
         init {
             textView = itemView.findViewById(android.R.id.text1)
+            textView2 = itemView.findViewById(android.R.id.text2)
 
             itemView.setOnLongClickListener {
                 longClickListener.onItemLongClicked(adapterPosition)
@@ -40,7 +43,7 @@ class TaskItemAdapter(val listOfItems: List<String>,
         val context = parent.context
         val inflater = LayoutInflater.from(context)
 
-        val taskItemView = inflater.inflate(android.R.layout.simple_list_item_1, parent, false)
+        val taskItemView = inflater.inflate(android.R.layout.simple_list_item_2, parent, false)
 
         return ViewHolder(taskItemView)
     }
@@ -48,7 +51,9 @@ class TaskItemAdapter(val listOfItems: List<String>,
     // populates viewholder with data
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = listOfItems.get(position)
+        val dateItem = listOfDates.get(position)
 
         holder.textView.text = item
+        holder.textView2.text = dateItem
     }
 }
