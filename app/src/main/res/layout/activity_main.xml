@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:layout_marginBottom="56dp"
-        android:hint="Add a date"
+        android:hint="Add a date or description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/addTaskButton"
         app:layout_constraintStart_toStartOf="parent" />
