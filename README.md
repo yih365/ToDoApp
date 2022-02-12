@@ -20,7 +20,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-* [x] User can **add a date to the todo item**
+* [x] User can **add a date or description to the todo item**
 
 ## Video Walkthrough
 
