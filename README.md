@@ -4,7 +4,7 @@
 
 Submitted by: **Yiyi Huang**
 
-Time spent: **X** hours spent in total
+Time spent: **4** hours spent in total
 
 ## User Stories
 
@@ -28,11 +28,11 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I ran into an obstacle while implementing the description/date feature. I had originally planned to make a two dimensional list to store each item as a pair of the info for task and description. However, the method used to read from the data files was the readLine method that enters every line of the file as an element into a list. This would mean that I could only use lists of string. To resolve this, I made two separate files for task and description as well as separate lists to store the information. The description for the i-th task in the task list would be in the i-th position of the descriptions list.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2022 Yiyi Huang
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
